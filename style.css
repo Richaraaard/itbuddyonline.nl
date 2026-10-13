@@ -144,3 +144,17 @@ header.top .wrap {
   }
 }
 
+
+/* Hover-kleuren pakketknoppen corrigeren */
+
+.package-btn:hover:not(.active) {
+  background: #eaf1ff;
+  color: #3d73f3;
+  border-color: #3d73f3;
+}
+
+.package-btn.active:hover {
+  background: #3d73f3;
+  color: #ffffff;
+  border-color: #3d73f3;
+}
