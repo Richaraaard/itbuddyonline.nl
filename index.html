@@ -160,7 +160,39 @@
 <section class="section dark" id="hulp"><div class="wrap contact-grid"><div><p class="kicker">DIRECT HULP AANVRAGEN</p><h2>Vertel ons waar je <span>tegenaan loopt.</span></h2><p>Vul het formulier in. We bekijken je aanvraag en nemen contact met je op. Een aanvraag is nog geen bevestigde supportsessie.</p><p class="email-intro">Liever direct contact via e-mail?</p><a class="btn primary" href="mailto:support@itbuddyonline.nl">
   ✉ support@itbuddyonline.nl
 </a></div><div class="form-card"><form id="support-form"><label for="fullname">Naam *</label><input id="fullname" name="name" autocomplete="name" required maxlength="100" placeholder="Je naam"><label for="mail">E-mailadres *</label><input id="mail" type="email" name="email" autocomplete="email" required maxlength="200" placeholder="jij@voorbeeld.nl"><label for="category">Waarmee heb je hulp nodig? *</label><select id="category" name="category" required><option value="">Kies een onderwerp</option><option>Windows & foutmeldingen</option><option>E-mail & Outlook</option><option>Trage computer</option><option>Software installeren</option><option>Computer check-up</option><option>Anders</option></select><label for="urgency">Wanneer wil je hulp?</label><select id="urgency" name="urgency"><option>Zo snel mogelijk</option><option>Op een later moment</option></select><label for="details">Beschrijf het probleem *</label><textarea id="details" name="details" rows="4" required maxlength="2000" placeholder="Wat gebeurt er? Welke foutmelding zie je?"></textarea><p class="form-hint">Vermeld geen wachtwoorden, toegangscodes of andere gevoelige gegevens.</p><label class="consent"><input type="checkbox" required name="consent" value="yes"><span>Ik heb de <a href="privacy.html" target="_blank" rel="noopener">privacyverklaring</a> gelezen en begrijp dat mijn gegevens worden gebruikt om op mijn aanvraag te reageren.</span></label><button class="btn primary wide" type="submit">Hulp aanvragen →</button><p class="form-status" role="status" aria-live="polite"></p></form></div></div></section>
-<section class="section" id="afspraak"><div class="wrap booking"><div><p class="kicker">PLAN JE MOMENT</p><h2>Plan hulp <span>wanneer het jou uitkomt.</span></h2><p>Plan eenvoudig een online afspraak met ITBuddy Online. Kies een datum en tijdstip dat jou uitkomt. Je ontvangt direct een bevestiging per e-mail.</p><a class="btn primary" href="mailto:info@itbuddyonline.nl?subject=Afspraak%20aanvragen">Liever contact via e-mail? →</a></div><div class="booking-card">
+
+<!-- Bevestigingspop-up ITBuddy -->
+<div id="success-popup" class="success-overlay" hidden>
+  <div class="success-modal" role="dialog"
+       aria-modal="true"
+       aria-labelledby="success-title">
+
+    <button type="button" class="success-close"
+            aria-label="Sluiten">×</button>
+
+    <img src="itbuddy-success.png"
+         alt="ITBuddy met twee duimen omhoog"
+         class="success-mascot">
+
+    <div class="success-check">✓</div>
+
+    <h2 id="success-title">
+      Aanvraag <span>succesvol verzonden!</span>
+    </h2>
+
+    <p>
+      Bedankt voor je bericht! We hebben je aanvraag
+      ontvangen en nemen zo snel mogelijk contact met je op.
+    </p>
+
+    <button type="button" class="success-button">
+      Sluiten
+    </button>
+
+  </div>
+</div>
+
+  <section class="section" id="afspraak"><div class="wrap booking"><div><p class="kicker">PLAN JE MOMENT</p><h2>Plan hulp <span>wanneer het jou uitkomt.</span></h2><p>Plan eenvoudig een online afspraak met ITBuddy Online. Kies een datum en tijdstip dat jou uitkomt. Je ontvangt direct een bevestiging per e-mail.</p><a class="btn primary" href="mailto:info@itbuddyonline.nl?subject=Afspraak%20aanvragen">Liever contact via e-mail? →</a></div><div class="booking-card">
 
 <div class="package-selector">
   <p><strong>Kies je pakket:</strong></p>
