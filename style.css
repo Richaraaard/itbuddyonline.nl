@@ -525,3 +525,31 @@ header.top .wrap {
 .faq details[open] summary::after {
   content: "−";
 }
+
+/* ITBuddy - FAQ met plus- en minicoontjes */
+
+#faq summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+#faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#faq summary::after {
+  content: "+";
+  color: #3d73f3;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+#faq details[open] summary::after {
+  content: "−";
+}
