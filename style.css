@@ -579,3 +579,10 @@ header.top .wrap {
   border-color: #3d73f3;
   background-color: #ffffff;
 }
+
+/* ITBuddy - compactere afsluitende sectie */
+
+#contact {
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
