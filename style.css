@@ -460,3 +460,26 @@ header.top .wrap {
     bottom: calc(100% - 105px);
   }
 }
+
+/* ITBuddy - professioneel bevestigingsicoon */
+
+.success-check {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Verberg de dubbele groene formulierbevestiging */
+#support-form .form-status[style*="color: rgb(19, 121, 75)"],
+#support-form .form-status[style*="color: #13794b"] {
+  display: none;
+}
