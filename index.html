@@ -164,6 +164,20 @@ function changePackage(button, url) {
   });
 }
 
+function changePackageByIndex(index) {
+  const buttons = document.querySelectorAll('.package-btn');
+
+  const urls = [
+    'https://calendly.com/itbuddyonline-info/30min',
+    'https://calendly.com/itbuddyonline-info/hulp-op-afstand-clone',
+    'https://calendly.com/itbuddyonline-info/pc-support-clone'
+  ];
+
+  if (buttons[index]) {
+    changePackage(buttons[index], urls[index]);
+  }
+}
+
 function initializeITBuddyCalendar() {
   if (window.Calendly) {
     Calendly.initInlineWidget({
