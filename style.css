@@ -360,3 +360,103 @@ header.top .wrap {
 #hulp #support-form {
   row-gap: 6px;
 }
+
+/* ITBuddy bevestigingspop-up */
+
+.success-overlay[hidden] {
+  display: none !important;
+}
+
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(9, 19, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 20px 20px;
+}
+
+.success-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: white;
+  border-radius: 22px;
+  padding: 115px 30px 30px;
+  text-align: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.success-mascot {
+  position: absolute;
+  width: 230px;
+  max-height: 210px;
+  object-fit: contain;
+  bottom: calc(100% - 115px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.success-check {
+  color: #22c55e;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.success-modal h2 {
+  font-size: 25px;
+  line-height: 1.3;
+  color: #101b34;
+  margin-bottom: 14px;
+}
+
+.success-modal h2 span {
+  color: #3d73f3;
+}
+
+.success-modal p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.success-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #3d73f3;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.success-button:hover {
+  background: #285cdb;
+}
+
+.success-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .success-modal {
+    padding: 105px 22px 24px;
+  }
+
+  .success-mascot {
+    width: 190px;
+    bottom: calc(100% - 105px);
+  }
+}
