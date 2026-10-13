@@ -7,3 +7,11 @@
 .booking {
   align-items: start;
 }
+.info-pill {
+  text-decoration: none;
+}
+
+.info-pill:hover {
+  text-decoration: none;
+  border-color: #2476ed;
+}
