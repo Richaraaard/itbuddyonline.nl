@@ -483,3 +483,17 @@ header.top .wrap {
 #support-form .form-status[style*="color: #13794b"] {
   display: none;
 }
+
+/* ITBuddy - compactere pakketkeuze */
+
+.booking-card {
+  padding-top: 20px;
+}
+
+.package-selector {
+  margin-top: 0;
+}
+
+.package-selector p {
+  margin-top: 0;
+}
