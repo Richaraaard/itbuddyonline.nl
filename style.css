@@ -87,3 +87,60 @@ header.top .wrap {
   color: #fff;
   border-color: #3d73f3;
 }
+
+
+/* Mooie ITBuddy pakketknoppen */
+
+.package-selector {
+  width: 100%;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.package-selector p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.package-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.package-btn {
+  background: white;
+  color: #3d73f3;
+  border: 2px solid #3d73f3;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.package-btn:hover {
+  background: #eaf1ff;
+}
+
+.package-btn.active,
+.package-btn.active:hover {
+  background: #3d73f3;
+  color: white;
+  border-color: #3d73f3;
+}
+
+@media (max-width: 600px) {
+  .package-buttons {
+    flex-direction: column;
+  }
+
+  .package-btn {
+    width: 100%;
+  }
+}
+
