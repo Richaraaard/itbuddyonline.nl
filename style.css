@@ -310,3 +310,27 @@ header.top .wrap {
     grid-template-columns: 1fr;
   }
 }
+
+/* ITBuddy - compacter hulpformulier */
+
+#hulp .form-card {
+  padding: 26px;
+}
+
+#hulp #support-form {
+  gap: 10px;
+}
+
+#hulp #support-form textarea {
+  min-height: 85px;
+  height: 85px;
+}
+
+#hulp #support-form input,
+#hulp #support-form select {
+  min-height: 44px;
+}
+
+#hulp #support-form label {
+  margin-bottom: 4px;
+}
