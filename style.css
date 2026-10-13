@@ -334,3 +334,29 @@ header.top .wrap {
 #hulp #support-form label {
   margin-bottom: 4px;
 }
+
+/* ITBuddy - formulier verder verfijnen */
+
+#hulp .form-card {
+  padding: 24px 26px;
+}
+
+#hulp #support-form label {
+  margin-bottom: 2px;
+}
+
+#hulp #support-form input:not([type="checkbox"]),
+#hulp #support-form select {
+  min-height: 42px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+#hulp #support-form textarea {
+  height: 80px;
+  min-height: 80px;
+}
+
+#hulp #support-form {
+  row-gap: 6px;
+}
