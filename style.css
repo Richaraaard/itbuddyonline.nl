@@ -218,3 +218,37 @@ header.top .wrap {
     width: 100%;
   }
 }
+
+/* ITBuddy - duidelijke hoofdknop bij tarieven */
+
+.price-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.price-actions .btn.primary {
+  flex: 1.4;
+  min-width: 0;
+}
+
+.price-actions .btn.secondary {
+  flex: 1;
+  min-width: 0;
+}
+
+.price-actions .btn {
+  padding: 13px 8px;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .price-actions {
+    flex-direction: column;
+  }
+
+  .price-actions .btn {
+    width: 100%;
+  }
+}
