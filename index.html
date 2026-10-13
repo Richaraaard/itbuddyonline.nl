@@ -33,10 +33,63 @@
   ✉ support@itbuddyonline.nl
 </a></div><div class="form-card"><form id="support-form"><label for="fullname">Naam *</label><input id="fullname" name="name" autocomplete="name" required maxlength="100" placeholder="Je naam"><label for="mail">E-mailadres *</label><input id="mail" type="email" name="email" autocomplete="email" required maxlength="200" placeholder="jij@voorbeeld.nl"><label for="category">Waarmee heb je hulp nodig? *</label><select id="category" name="category" required><option value="">Kies een onderwerp</option><option>Windows & foutmeldingen</option><option>E-mail & Outlook</option><option>Trage computer</option><option>Software installeren</option><option>Computer check-up</option><option>Anders</option></select><label for="urgency">Wanneer wil je hulp?</label><select id="urgency" name="urgency"><option>Zo snel mogelijk</option><option>Op een later moment</option></select><label for="details">Beschrijf het probleem *</label><textarea id="details" name="details" rows="4" required maxlength="2000" placeholder="Wat gebeurt er? Welke foutmelding zie je?"></textarea><p class="form-hint">Vermeld geen wachtwoorden, toegangscodes of andere gevoelige gegevens.</p><label class="consent"><input type="checkbox" required name="consent" value="yes"><span>Ik heb de <a href="privacy.html" target="_blank" rel="noopener">privacyverklaring</a> gelezen en begrijp dat mijn gegevens worden gebruikt om op mijn aanvraag te reageren.</span></label><button class="btn primary wide" type="submit">Hulp aanvragen →</button><p class="form-status" role="status" aria-live="polite"></p></form></div></div></section>
 <section class="section" id="afspraak"><div class="wrap booking"><div><p class="kicker">PLAN JE MOMENT</p><h2>Plan hulp <span>wanneer het jou uitkomt.</span></h2><p>Plan eenvoudig een online afspraak met ITBuddy Online. Kies een datum en tijdstip dat jou uitkomt. Je ontvangt direct een bevestiging per e-mail.</p><a class="btn primary" href="mailto:info@itbuddyonline.nl?subject=Afspraak%20aanvragen">Liever contact via e-mail? →</a></div><div class="booking-card">
-<div class="calendly-inline-widget"
-     data-url="https://calendly.com/itbuddyonline-info/30min"
-     style="min-width:320px;height:650px;">
+
+<div class="package-selector">
+  <p><strong>Kies je pakket:</strong></p>
+
+  <div class="package-buttons">
+    <button type="button" class="package-btn active"
+      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/30min')">
+      Quick Fix · €19
+    </button>
+
+    <button type="button" class="package-btn"
+      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/hulp-op-afstand-clone')">
+      PC Support · €35
+    </button>
+
+    <button type="button" class="package-btn"
+      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/pc-support-clone')">
+      PC Check-up · €59
+    </button>
+  </div>
 </div>
+
+<div id="itbuddy-calendar" style="min-width:320px;height:650px;"></div>
+
+<script>
+function changePackage(button, url) {
+  document.querySelectorAll('.package-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  button.classList.add('active');
+
+  const calendar = document.getElementById('itbuddy-calendar');
+  calendar.innerHTML = '';
+
+  Calendly.initInlineWidget({
+    url: url,
+    parentElement: calendar
+  });
+}
+
+function initializeITBuddyCalendar() {
+  if (window.Calendly) {
+    Calendly.initInlineWidget({
+      url: 'https://calendly.com/itbuddyonline-info/30min',
+      parentElement: document.getElementById('itbuddy-calendar')
+    });
+  }
+}
+
+if (document.readyState === 'complete') {
+  initializeITBuddyCalendar();
+} else {
+  window.addEventListener('load', initializeITBuddyCalendar);
+}
+</script>
+
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script></div></div></section>
 <section class="section muted" id="faq"><div class="wrap narrow"><p class="kicker">VEELGESTELDE VRAGEN</p><h2>Goed om te <span>weten.</span></h2><details><summary>Hoe werkt computerhulp op afstand?</summary><p>We spreken samen een tijd af en gebruiken een geschikte remote-supportoplossing. Jij start de verbinding en houdt de controle.</p></details><details><summary>Kan ieder computerprobleem worden opgelost?</summary><p>Nee. Hardwaredefecten en sommige netwerkproblemen vragen fysieke hulp. We beoordelen vooraf wat mogelijk is.</p></details><details><summary>Moet ik mijn wachtwoord doorgeven?</summary><p>Nee. Deel nooit je wachtwoord via het aanvraagformulier. Indien nodig voer je gegevens zelf in tijdens de sessie.</p></details><details><summary>Wanneer kan ik hulp krijgen?</summary><p>Beschikbaarheid wordt na je aanvraag bevestigd. Er is nog geen gegarandeerde responstijd of 24/7-dienst.</p></details><details><summary>Hoe betaal ik?</summary><p>De betaalwijze en voorwaarden worden vooraf bevestigd. Een geïntegreerde betaalfunctie wordt later aangesloten.</p></details></div></section>
 <section class="section" id="contact"><div class="wrap final-cta"><p class="kicker">KLAAR OM VERDER TE GAAN?</p><h2>Je staat er niet <span>alleen voor.</span></h2><p>ITBuddy — jouw computerhulp, altijd dichtbij.</p><div class="actions center"><a class="btn primary" href="#hulp">Direct hulp aanvragen</a><a class="btn secondary" href="#afspraak">Afspraak plannen</a></div></div></section></main>
