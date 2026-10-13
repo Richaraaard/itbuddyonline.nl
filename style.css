@@ -182,3 +182,39 @@ header.top .wrap {
     transition: none;
   }
 }
+
+/* Tariefkaarten: knoppen netjes naast elkaar */
+
+.price-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.price-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: auto;
+  padding: 13px 12px;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.price-actions .btn svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .price-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .price-actions .btn {
+    width: 100%;
+  }
+}
