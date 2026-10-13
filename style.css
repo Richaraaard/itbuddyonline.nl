@@ -553,3 +553,29 @@ header.top .wrap {
 #faq details[open] summary::after {
   content: "−";
 }
+
+/* ITBuddy - FAQ hover-effect */
+
+#faq details {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  #faq details:hover {
+    background-color: #f5f8ff;
+    border-color: #3d73f3;
+    box-shadow: 0 8px 24px rgba(61, 115, 243, 0.10);
+    transform: translateY(-3px);
+  }
+}
+
+/* Geopende vraag subtiel accentueren */
+
+#faq details[open] {
+  border-color: #3d73f3;
+  background-color: #ffffff;
+}
