@@ -31,3 +31,24 @@ header.top .wrap {
     display: flex;
     align-items: center;
 }
+
+/* ITBuddy - hover-effect dienstenkaarten */
+.cards .card {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+    .cards .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+        border-color: #b9ccff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cards .card {
+        transition: none;
+    }
+}
