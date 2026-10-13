@@ -10,12 +10,13 @@ const successPopup = document.getElementById('success-popup');
 
 function showSuccessPopup() {
   if (!successPopup) return;
-  successPopup.hidden = false;
+  successPopup.hidden = false;document.body.style.overflow = 'hidden';
 }
 
 function closeSuccessPopup() {
   if (!successPopup) return;
   successPopup.hidden = true;
+  document.body.style.overflow = '';
 }
 
 document.querySelectorAll(
