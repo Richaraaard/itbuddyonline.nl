@@ -2,4 +2,36 @@ const menu=document.querySelector('.menu');const nav=document.querySelector('nav
 // Configure an HTTPS form endpoint from your provider before publishing.
 // Never add secret API keys here: all static site code is public.
 const FORM_ENDPOINT='https://formspree.io/f/mkjovdga';
-const form=document.querySelector('#support-form');form?.addEventListener('submit',async e=>{e.preventDefault();const status=form.querySelector('.form-status');if(!FORM_ENDPOINT){status.textContent='Aanvragen zijn nog niet actief. We moeten eerst de beveiligde formulierdienst koppelen.';status.style.color='#b45309';return;}const btn=form.querySelector('button[type=submit]');btn.disabled=true;status.textContent='Aanvraag verzenden…';try{const data=new FormData(form);const response=await fetch(FORM_ENDPOINT,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Verzenden mislukt');form.reset();status.textContent='Je aanvraag is verzonden. Je ontvangt bericht zodra we je aanvraag hebben bekeken.';status.style.color='#13794b';}catch(err){status.textContent='Verzenden is niet gelukt. Probeer het later opnieuw.';status.style.color='#b42318';}finally{btn.disabled=false;}});
+const form=document.querySelector('#support-form');form?.addEventListener('submit',async e=>{e.preventDefault();const status=form.querySelector('.form-status');if(!FORM_ENDPOINT){status.textContent='Aanvragen zijn nog niet actief. We moeten eerst de beveiligde formulierdienst koppelen.';status.style.color='#b45309';return;}const btn=form.querySelector('button[type=submit]');btn.disabled=true;status.textContent='Aanvraag verzenden…';try{const data=new FormData(form);const response=await fetch(FORM_ENDPOINT,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Verzenden mislukt');form.reset()showSuccessPopup();;status.textContent='Je aanvraag is verzonden. Je ontvangt bericht zodra we je aanvraag hebben bekeken.';status.style.color='#13794b';}catch(err){status.textContent='Verzenden is niet gelukt. Probeer het later opnieuw.';status.style.color='#b42318';}finally{btn.disabled=false;}});
+
+/* ITBuddy bevestigingspop-up */
+
+const successPopup = document.getElementById('success-popup');
+
+function showSuccessPopup() {
+  if (!successPopup) return;
+  successPopup.hidden = false;
+}
+
+function closeSuccessPopup() {
+  if (!successPopup) return;
+  successPopup.hidden = true;
+}
+
+document.querySelectorAll(
+  '.success-close, .success-button'
+).forEach(button => {
+  button.addEventListener('click', closeSuccessPopup);
+});
+
+successPopup?.addEventListener('click', event => {
+  if (event.target === successPopup) {
+    closeSuccessPopup();
+  }
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeSuccessPopup();
+  }
+});
