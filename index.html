@@ -3,7 +3,7 @@
 <header class="top"><div class="wrap nav"><a class="logo" href="#home" aria-label="ITBuddy Online home">
   <img src="itbuddy-header-compact.png" alt="ITBuddy Online" style="width:340px;height:auto;display:block;">
 </a>
-</a><button class="menu" aria-label="Menu openen" aria-expanded="false">☰</button><nav id="navigation"><a href="#diensten">Diensten</a><a href="#tarieven">Tarieven</a><a href="#werkwijze">Werkwijze</a><a href="#faq">Veelgestelde vragen</a><a href="#contact">Contact</a><a class="nav-cta" href="#hulp">Hulp aanvragen →</a></nav></div></header>
+<button class="menu" aria-label="Menu openen" aria-expanded="false">☰</button><nav id="navigation"><a href="#diensten">Diensten</a><a href="#tarieven">Tarieven</a><a href="#werkwijze">Werkwijze</a><a href="#faq">Veelgestelde vragen</a><a href="#contact">Contact</a><a class="nav-cta" href="#hulp">Hulp aanvragen →</a></nav></div></header>
 <main id="home"><section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">● PERSOONLIJKE IT-HULP OP AFSTAND</div><h1>Computerproblemen?<br><em>Je Buddy helpt.</em></h1><p class="lead">Van een trage laptop tot problemen met Windows of Outlook. Duidelijke tarieven, persoonlijke aandacht en hulp vanuit je eigen huis.</p><div class="actions"><a class="btn primary" href="#hulp">⚡ Direct hulp aanvragen</a><a class="btn secondary" href="#afspraak">
   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
        viewBox="0 0 24 24" fill="none"
@@ -196,75 +196,34 @@
 
 <div class="package-selector">
   <p><strong>Kies je pakket:</strong></p>
-
   <div class="package-buttons">
-    <button type="button" class="package-btn active"
-      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/30min')">
-      Quick Fix · €19
-    </button>
-
-    <button type="button" class="package-btn"
-      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/hulp-op-afstand-clone')">
-      PC Support · €35
-    </button>
-
-    <button type="button" class="package-btn"
-      onclick="changePackage(this, 'https://calendly.com/itbuddyonline-info/pc-support-clone')">
-      PC Check-up · €59
-    </button>
+    <button type="button" class="package-btn active" onclick="changePackageByIndex(0)" aria-pressed="true">Quick Fix · €19</button>
+    <button type="button" class="package-btn" onclick="changePackageByIndex(1)" aria-pressed="false">PC Support · €35</button>
+    <button type="button" class="package-btn" onclick="changePackageByIndex(2)" aria-pressed="false">PC Check-up · €59</button>
   </div>
 </div>
-
-<div id="itbuddy-calendar" style="min-width:320px;height:600px;"></div>
-
+<div id="itbuddy-calendar" style="min-width:0;width:100%;height:680px;">
+  <iframe id="itbuddy-calendar-frame" title="Boek Quick Fix bij ITBuddy Online" src="https://cal.com/itbuddyonline/quickfix?embed=true" loading="lazy" style="display:block;width:100%;height:100%;border:0;border-radius:12px;" allow="payment"></iframe>
+</div>
 <script>
-function changePackage(button, url) {
-  document.querySelectorAll('.package-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  button.classList.add('active');
-
-  const calendar = document.getElementById('itbuddy-calendar');
-  calendar.innerHTML = '';
-
-  Calendly.initInlineWidget({
-    url: url,
-    parentElement: calendar
-  });
-}
-
+const itbuddyPackages = [
+  {name: 'Quick Fix', url: 'https://cal.com/itbuddyonline/quickfix?embed=true'},
+  {name: 'PC Support', url: 'https://cal.com/itbuddyonline/pcsupport?embed=true'},
+  {name: 'PC Check-up', url: 'https://cal.com/itbuddyonline/pccheckup?embed=true'}
+];
 function changePackageByIndex(index) {
-  const buttons = document.querySelectorAll('.package-btn');
-
-  const urls = [
-    'https://calendly.com/itbuddyonline-info/30min',
-    'https://calendly.com/itbuddyonline-info/hulp-op-afstand-clone',
-    'https://calendly.com/itbuddyonline-info/pc-support-clone'
-  ];
-
-  if (buttons[index]) {
-    changePackage(buttons[index], urls[index]);
-  }
-}
-
-function initializeITBuddyCalendar() {
-  if (window.Calendly) {
-    Calendly.initInlineWidget({
-      url: 'https://calendly.com/itbuddyonline-info/30min',
-      parentElement: document.getElementById('itbuddy-calendar')
-    });
-  }
-}
-
-if (document.readyState === 'complete') {
-  initializeITBuddyCalendar();
-} else {
-  window.addEventListener('load', initializeITBuddyCalendar);
+  const item = itbuddyPackages[index];
+  if (!item) return;
+  document.querySelectorAll('.package-btn').forEach((button, i) => {
+    button.classList.toggle('active', i === index);
+    button.setAttribute('aria-pressed', String(i === index));
+  });
+  const frame = document.getElementById('itbuddy-calendar-frame');
+  frame.title = 'Boek ' + item.name + ' bij ITBuddy Online';
+  if (frame.getAttribute('src') !== item.url) frame.src = item.url;
 }
 </script>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script></div></div></section>
+</div></div></section>
 <section class="section muted" id="faq"><div class="wrap narrow"><p class="kicker">VEELGESTELDE VRAGEN</p><h2>Goed om te <span>weten.</span></h2><details><summary>Hoe werkt computerhulp op afstand?</summary><p>We spreken samen een tijd af en gebruiken een geschikte remote-supportoplossing. Jij start de verbinding en houdt de controle.</p></details><details><summary>Kan ieder computerprobleem worden opgelost?</summary><p>Nee. Hardwaredefecten en sommige netwerkproblemen vragen fysieke hulp. We beoordelen vooraf wat mogelijk is.</p></details><details><summary>Moet ik mijn wachtwoord doorgeven?</summary><p>Nee. Deel nooit je wachtwoord via het aanvraagformulier. Indien nodig voer je gegevens zelf in tijdens de sessie.</p></details><details><summary>Wanneer kan ik hulp krijgen?</summary><p>Beschikbaarheid wordt na je aanvraag bevestigd. Er is nog geen gegarandeerde responstijd of 24/7-dienst.</p></details><details><summary>Hoe betaal ik?</summary><p>De betaalwijze en voorwaarden worden vooraf bevestigd. Een geïntegreerde betaalfunctie wordt later aangesloten.</p></details></div></section>
 <section class="section" id="contact"><div class="wrap final-cta"><p class="kicker">KLAAR OM VERDER TE GAAN?</p><h2>Je staat er niet <span>alleen voor.</span></h2><p>ITBuddy — jouw computerhulp, altijd dichtbij.</p><div class="actions center"><a class="btn primary" href="#hulp">Direct hulp aanvragen</a><a class="btn secondary" href="#afspraak">Afspraak plannen</a></div></div></section></main>
 <footer><div class="wrap foot"><div><a class="logo footer-logo" href="#home" aria-label="ITBuddy Online - naar boven">
