@@ -595,3 +595,36 @@ header.top .wrap {
   max-width: 100%;
   height: auto;
 }
+
+/* ITBuddy Online — brede Cal.com kalender op desktop */
+@media (min-width: 901px) {
+  #afspraak .booking {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  #afspraak .booking > div:first-child {
+    max-width: 800px;
+  }
+  #afspraak .booking-card {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+  }
+}
+#afspraak #itbuddy-calendar {
+  width: 100%;
+  min-width: 0 !important;
+  height: 850px !important;
+  text-align: left;
+}
+#afspraak #itbuddy-calendar iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 850px;
+  border: 0;
+}
+@media (max-width: 600px) {
+  #afspraak .booking-card { padding: 16px; }
+  #afspraak #itbuddy-calendar { height: 850px !important; }
+}
