@@ -628,3 +628,20 @@ header.top .wrap {
   #afspraak .booking-card { padding: 16px; }
   #afspraak #itbuddy-calendar { height: 850px !important; }
 }
+
+/* ITBuddy Online — compactere boekingskalender (desktop)
+   Cal.com plaatst boven de eigen kalender extra witruimte binnen het iframe.
+   We schuiven het iframe visueel omhoog, zonder de pakketknoppen te veranderen. */
+@media (min-width: 901px) {
+  #afspraak .package-selector { margin-bottom: 8px; }
+  #afspraak .package-buttons { margin-bottom: 8px; }
+  #afspraak #itbuddy-calendar {
+    overflow: hidden;
+    height: 760px !important;
+  }
+  #afspraak #itbuddy-calendar iframe {
+    transform: translateY(-95px);
+    height: 855px !important;
+    min-height: 855px;
+  }
+}
