@@ -645,3 +645,22 @@ header.top .wrap {
     min-height: 855px;
   }
 }
+
+/* ITBuddy - klikbare doelgroepkaarten */
+
+#audiences .card,
+#audiences .card:visited {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+#audiences .card h3,
+#audiences .card p {
+  text-decoration: none;
+}
+
+#audiences .card .card-link {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
