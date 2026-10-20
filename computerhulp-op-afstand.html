@@ -44,6 +44,10 @@
     .service-page .foot-links a:hover{text-decoration:underline}
     @media(max-width:850px){.service-page .hero-grid{grid-template-columns:1fr}.service-page .hero-side{max-width:540px}}
     @media(max-width:560px){.service-page .audience{grid-template-columns:1fr}.service-page .hero{padding:58px 0 70px}.service-page .hero-side{padding:22px}.service-page .final-cta-box{padding:35px 20px}}
+
+    .service-page .hero-illustration{min-width:0;align-self:center;border-radius:22px;overflow:hidden;box-shadow:0 24px 65px #0004}
+    .service-page .hero-illustration img{display:block;width:100%;height:auto;aspect-ratio: .9;object-fit:cover}
+    @media(max-width:850px){.service-page .hero-illustration{max-width:560px;margin:0 auto}}
   </style>
   <script type="application/ld+json">
   {
@@ -83,10 +87,7 @@
         <div class="actions"><a class="btn primary" href="/#hulp">⚡ Direct hulp aanvragen</a><a class="btn secondary" href="/#afspraak">Afspraak plannen</a></div>
         <div class="proof"><span>✓ Heel Nederland</span><span>✓ Vanaf €19</span><span>✓ Alleen met jouw toestemming</span></div>
       </div>
-      <aside class="hero-side" aria-label="Veelvoorkomende computerproblemen">
-        <h2>Waarmee helpen we je?</h2>
-        <ul><li>Windows &amp; foutmeldingen</li><li>E-mail &amp; Outlook</li><li>Trage computers en laptops</li><li>Software installeren</li><li>Computer check-up</li></ul>
-      </aside>
+      <div class="hero-illustration"><img src="itbuddy-hero-support.png" alt="ITBuddy helpt je vanaf zijn laptop met computerproblemen op afstand" width="906" height="1024" loading="eager" fetchpriority="high"></div>
     </div>
   </section>
   <section class="section" id="problemen" aria-labelledby="problemen-titel">
