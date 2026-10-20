@@ -295,6 +295,16 @@ function changePackageByIndex(index) {
   frame.title = 'Boek ' + item.name + ' bij ITBuddy Online';
   if (frame.getAttribute('src') !== item.url) frame.src = item.url;
 }
+  
+window.addEventListener('load', function () {
+  const params = new URLSearchParams(window.location.search);
+  const pakket = params.get('pakket');
+
+  if (pakket !== null && /^[012]$/.test(pakket)) {
+    changePackageByIndex(Number(pakket));
+  }
+});
+
 </script>
 </div></div></section>
 <section class="section muted" id="faq"><div class="wrap narrow"><p class="kicker">VEELGESTELDE VRAGEN</p><h2>Goed om te <span>weten.</span></h2><details><summary>Hoe werkt computerhulp op afstand?</summary><p>We spreken samen een tijd af en gebruiken een geschikte remote-supportoplossing. Jij start de verbinding en houdt de controle.</p></details><details><summary>Kan ieder computerprobleem worden opgelost?</summary><p>Nee. Hardwaredefecten en sommige netwerkproblemen vragen fysieke hulp. We beoordelen vooraf wat mogelijk is.</p></details><details><summary>Moet ik mijn wachtwoord doorgeven?</summary><p>Nee. Deel nooit je wachtwoord via het aanvraagformulier. Indien nodig voer je gegevens zelf in tijdens de sessie.</p></details><details><summary>Wanneer kan ik hulp krijgen?</summary><p>Beschikbaarheid wordt na je aanvraag bevestigd. Er is nog geen gegarandeerde responstijd of 24/7-dienst.</p></details><details><summary>Hoe betaal ik?</summary><p>De betaalwijze en voorwaarden worden vooraf bevestigd. Een geïntegreerde betaalfunctie wordt later aangesloten.</p></details></div></section>
