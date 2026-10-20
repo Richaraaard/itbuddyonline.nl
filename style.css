@@ -646,21 +646,20 @@ header.top .wrap {
   }
 }
 
-/* ITBuddy - klikbare doelgroepkaarten */
+/* ITBuddy - doelgroepkaarten zonder onderstreping */
 
-#audiences .card,
-#audiences .card:visited {
-  text-decoration: none;
-  color: var(--ink);
+a:has(.card-link) {
+  text-decoration: none !important;
+  color: inherit;
 }
 
-#audiences .card h3,
-#audiences .card p {
-  text-decoration: none;
+a:has(.card-link) h3,
+a:has(.card-link) p {
+  text-decoration: none !important;
 }
 
-#audiences .card .card-link {
-  color: var(--blue);
+a:has(.card-link) .card-link {
+  color: #2476ed;
   font-weight: 700;
   text-decoration: none;
 }
