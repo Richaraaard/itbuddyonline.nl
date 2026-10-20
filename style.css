@@ -692,3 +692,30 @@ header.top .wrap {
     z-index: 2;
   }
 }
+
+/* Waarom ITBuddy - vier kaarten naast elkaar */
+@media (min-width: 1100px) {
+  #waarom .cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Tablets: twee kaarten per rij */
+@media (min-width: 650px) and (max-width: 1099px) {
+  #waarom .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Mobiel: een kaart per rij */
+@media (max-width: 649px) {
+  #waarom .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
