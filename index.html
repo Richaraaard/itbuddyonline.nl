@@ -301,4 +301,13 @@ function changePackageByIndex(index) {
 <section class="section" id="contact"><div class="wrap final-cta"><p class="kicker">KLAAR OM VERDER TE GAAN?</p><h2>Je staat er niet <span>alleen voor.</span></h2><p>ITBuddy — jouw computerhulp, altijd dichtbij.</p><div class="actions center"><a class="btn primary" href="#hulp">Direct hulp aanvragen</a><a class="btn secondary" href="#afspraak">Afspraak plannen</a></div></div></section></main>
 <footer><div class="wrap foot"><div><a class="logo footer-logo" href="#home" aria-label="ITBuddy Online - naar boven">
   <img src="itbuddy-header-compact.png" alt="ITBuddy Online">
-</a><p>Jouw computerhulp, altijd dichtbij.</p></div><div><strong>Contact</strong><p><a href="mailto:info@itbuddyonline.nl">info@itbuddyonline.nl</a></p><p>Online hulp in Nederland</p></div><div><strong>Informatie</strong><p><a href="privacy.html">Privacyverklaring</a></p><p><a href="voorwaarden.html">Algemene voorwaarden</a></p></div></div><div class="wrap copyright">© <span id="year"></span> ITBuddy Online · Alle rechten voorbehouden</div></footer><script src="script.js"></script></body></html>
+</a><p>Jouw computerhulp, altijd dichtbij.</p></div><div><strong>Contact</strong><p><a href="mailto:info@itbuddyonline.nl">info@itbuddyonline.nl</a></p><p>Online hulp in Nederland</p></div><div><strong>Informatie</strong><p><a href="privacy.html">Privacyverklaring</a></p><p><a href="voorwaarden.html">Algemene voorwaarden</a></p></div></div><div class="wrap copyright">© <span id="year"></span> ITBuddy Online · Alle rechten voorbehouden</div></footer><script src="script.js"></script><script>
+/* Selecteer op de homepage de dienst waarop de bezoeker klikte. */
+(function () {
+  const category = new URLSearchParams(window.location.search).get('category');
+  const field = document.getElementById('category');
+  if (!category || !field) return;
+  const option = Array.from(field.options).find(o => o.value === category || o.text === category);
+  if (option) field.value = option.value;
+})();
+</script></body></html>
