@@ -668,3 +668,27 @@ header.top .wrap {
   font-weight: 700;
   text-decoration: none;
 }
+
+/* ITBuddy - verbonden stappenplan */
+
+#werkwijze .step-card {
+  position: relative;
+}
+
+/* Subtiele lijn tussen de kaarten op desktop */
+@media (min-width: 1000px) {
+  #werkwijze .steps {
+    gap: 24px;
+  }
+
+  #werkwijze .step-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 24px;
+    height: 2px;
+    background: #A9C7FF;
+    z-index: 2;
+  }
+}
